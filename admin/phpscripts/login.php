@@ -17,8 +17,8 @@
 				$updatequery = mysqli_query($link, $update);
 			}
 			redirect_to("admin_index.php");
-		}else{
-			$message = "Learn how to type you dumba&*.";
+		}else{			
+			$message = "You have entered an invalid username or password.";
 			return $message;
 		}
 

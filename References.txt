@@ -1,0 +1,7 @@
+-Frameworks & Libraries:-
+Foundation	: https://foundation.zurb.com/sites/docs/installation.html
+JQuery 2.2.4: https://jquery.com
+		
+-References-
+Login Form: https://foundation.zurb.com/building-blocks/blocks/form-login.html as a starting point.
+
