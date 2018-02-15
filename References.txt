@@ -5,3 +5,6 @@ JQuery 2.2.4: https://jquery.com
 -References-
 Login Form: https://foundation.zurb.com/building-blocks/blocks/form-login.html as a starting point.
 Updating Last Login Time: https://stackoverflow.com/a/15290832
+Increment Failed Login Attempts: https://stackoverflow.com/a/2762856
+Login Message:	https://www.w3schools.com/php/php_switch.asp
+				https://stackoverflow.com/a/24813225
