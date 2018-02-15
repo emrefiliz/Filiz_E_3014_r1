@@ -1027,8 +1027,19 @@ CREATE TABLE tbl_user (
   user_pass varchar(250) NOT NULL,
   user_email varchar(250) NOT NULL,
   user_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  user_ip varchar(50) NOT NULL DEFAULT 'no'
+  user_ip varchar(50) NOT NULL DEFAULT 'no',
+  user_last_login timestamp DEFAULT NULL,
+  user_failed_login_attempts int(5) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Dumping data for table tbl_user
+--
+INSERT INTO `tbl_user` VALUES
+(1,'Emre Filiz','emre','1234','e_filiz@fanshawec.ca','2018-02-15 00:00:00','::1','2018-02-15 00:01:00',0),
+(2,'Jane Doe','jane','1234','j_doe@fanshawec.ca','2018-02-15 01:00:00','::1','2018-02-15 01:01:00',0),
+(3,'Justin Brunner','justin','1234','jbrunner@fanshawec.ca','2018-02-15 03:00:00','no',NULL,0);
 
 --
 -- Indexes for dumped tables

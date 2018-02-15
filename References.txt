@@ -4,4 +4,4 @@ JQuery 2.2.4: https://jquery.com
 		
 -References-
 Login Form: https://foundation.zurb.com/building-blocks/blocks/form-login.html as a starting point.
-
+Updating Last Login Time: https://stackoverflow.com/a/15290832

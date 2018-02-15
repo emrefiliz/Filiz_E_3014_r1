@@ -10,6 +10,8 @@
 <link rel=stylesheet type=text/css href=css/style.css>
 </head>
 <body>
+	Last Login: <?php echo $_SESSION['user_last_login'];  ?>
+	<br>
 	<?php echo $_SESSION['user_name'];  ?>
 </body>
 </html>

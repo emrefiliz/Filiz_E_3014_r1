@@ -1,5 +1,4 @@
 <?php
-
 	function logIn($username, $password, $ip) {
 		require_once('connect.php');
 		$username = mysqli_real_escape_string($link, $username);
@@ -12,16 +11,21 @@
 			$id = $founduser['user_id'];
 			$_SESSION['user_id'] = $id;
 			$_SESSION['user_name']= $founduser['user_fname'];
-			if(mysqli_query($link, $loginstring)){
-				$update = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
-				$updatequery = mysqli_query($link, $update);
-			}
+			$_SESSION['user_last_login'] = $founduser['user_last_login'];
+				if(mysqli_query($link, $loginstring)){
+					// Update IP
+					$updateIp = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
+					$updateIpQuery = mysqli_query($link, $updateIp);
+
+					// Update Last Login
+					$updateLastLogin = "UPDATE tbl_user SET user_last_login = NOW() WHERE user_id = {$id}";
+					$updateLastLoginQuery = mysqli_query($link, $updateLastLogin);					
+				}
 			redirect_to("admin_index.php");
-		}else{			
+			} else {
 			$message = "You have entered an invalid username or password.";
 			return $message;
 		}
-
 		mysqli_close($link);
 	}
 ?>
