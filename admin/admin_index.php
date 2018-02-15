@@ -1,6 +1,16 @@
 <?php
 	require_once('phpscripts/config.php');
 	confirm_logged_in();
+	switch (true) {		
+    case date("H") >= 6:
+        $message = "Good Morning";
+    case date("H") >= 12:
+        $message = "Good Afternoon";        
+    case date("H") >= 16:
+        $message = "Good Evening";    
+    default:
+        $message = "Good Night";
+}
 ?>
 <!doctype html>
 <html>
@@ -10,8 +20,8 @@
 <link rel=stylesheet type=text/css href=css/style.css>
 </head>
 <body>
-	Last Login: <?php echo $_SESSION['user_last_login'];  ?>
+	<?php echo $message,', ', $_SESSION['user_name'];  ?>
 	<br>
-	<?php echo $_SESSION['user_name'];  ?>
+	Last Login: <?php echo $_SESSION['user_last_login'];  ?>
 </body>
 </html>
